@@ -1,93 +1,134 @@
 // pages/weather/weather.js
 var app = getApp();
+var weather = require("../../utils/weather.js");
 Page({
   data: {
-    array: ['老爸', '老妈', '弟弟', '姐姐'],
-    openId: null,
+    relationArray: ['老爸', '老妈', '弟弟', '姐姐'],
+    cityArray: ['北京', '金华', '成都'],
+    weatherInfo: [],
+    openId: app.globalData.openId,
+    region: ['广东省', '广州市', '海珠区'],
+    customItem: '',
+    view_turnOnAdd: false,
+    relation: null,
   },
-  onLoad: function (options) {
+  onLoad: function () {
     var that = this
-    getOpenIdTap(that);
-    wx.request({
-      url: '',//查询关系所需要的接口
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        openId: 12345,
-      },
-      success: (res) => {
-        console.log(res)
-        if (res.data.result == true) {
-          wx.navagat
-          wx.showToast({
-            title: '提交成功！',
-            icon: 'success',
-          })
-        } else {
-          wx.showToast({
-            title: `提交失败${res.data.massage}`,
-            image: '/images/error.png',
-          })
-        }
-      },
-      fail: (e) => {
-        console.log(`${e}`),
-          wx.showToast({
-            title: `提交失败${e}`,
-            image: '/images/error.png',
-          })
-      }
+    //获取未添加城市的的关系
+    //getNoCityRelation(that);
 
+    //获得已添加城市的天气
+    getCityWeather(that);
+  },
+  addNew() {
+    this.setData({
+      view_turnOnAdd: true,
     })
   },
-
-
-  addWeather: function () {
-
+  button_saveAdd() {
+    var that = this
+    console.log(that.data.region[2])
+    if (that.data.relation && that.data.region[2]) {
+      wx.request({
+        url: 'http://localhost:8443/weather/set',
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data: {
+          openid: app.globalData.openId,
+          torole: that.data.relation,
+          city: that.data.region[2],
+        },
+        success: (res) => {
+          console.log(res)
+          if (res.data) {
+            wx.showToast({
+              text: '添加成功',
+              icon: 'success',
+            })
+          }
+        },
+        fail: (e) => {
+          console.log(e)
+        }
+      })
+      this.setData({
+        view_turnOnAdd: false,
+      })
+    }
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    var _relation = this.data.relationArray[e.detail.value]
     this.setData({
-      index: e.detail.value
+      relation: _relation
     })
   },
-  weatherSubmit: function (e) {
-    //console.log("这是上传签到信息所需要的信息" + "::" + this.data.cChooseId + "::" + this.data.cTime + startTime + "::" + endTime);
-    wx.request({
-      url: '',//上传关系以及城市的URL
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-
-      },
-      success: (res) => {
-        console.log(res)
-        if (res.data.result == true) {
-          wx.navagat
-          wx.showToast({
-            title: '提交成功！',
-            icon: 'success',
-          })
-        } else {
-          wx.showToast({
-            title: `提交失败${res.data.massage}`,
-            image: '/images/error.png',
-          })
-        }
-      },
-      fail: (e) => {
-        console.log(`${e}`),
-          wx.showToast({
-            title: `提交失败${e}`,
-            image: '/images/error.png',
-          })
-      }
-
+  bindRegionChange: function (e) {
+    this.setData({
+      region: e.detail.value
     })
-  }
+  },
 })
+
+function getCityWeather(that) {
+  wx.request({
+    url: 'http://localhost:8443/user/getFamilyCity',
+    method: 'POST',
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      id: app.globalData.familyId,
+    },
+    success: (res) => {
+      console.log(res.data);
+      var _list = new Array();
+      for (var i = 0; i < res.data.length; i++) {
+        console.log(res.data[0].city);
+        weather.getWeatherData(res.data[i].city, function (d) {
+          console.log(d);
+          if (d.status = 'ok') {
+            _list.push(d.desc);
+          }
+          else {
+            console.log(d);
+          }
+        });
+      }
+      that.setData({
+        weatherInfo: _list
+      });
+    },
+    fail: (e) => {
+      console.log(e);
+    }
+  });
+}
+
+function getNoCityRelation(that) {
+  wx.request({
+    url: 'http://localhost:8443/',
+    method: 'POST',
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      openId: app.globalData.openId,
+    },
+    success: (res) => {
+      console.log(res);
+      if (res == 'true') {
+        that.setData({
+
+        })
+      }
+      else {
+      }
+    },
+    fail: (e) => {
+      console.log(e);
+    }
+  });
+}
 

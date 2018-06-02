@@ -9,7 +9,7 @@ App({
     // redirectToSign();
   },
   globalData: {
-    familyId: null,
+    familyId: 1,
     openId: null,
     role: null
   }
@@ -38,9 +38,6 @@ function redirectToSign() {
 /*
 * 获取openid
 */
-
-
-
 function getOpenIdTap(that) {
   wx.login({
     success: function (res) {
