@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/messageIndex/messageIndex",
+    "pages/confessionMessage/confessionMessage",
     "pages/weather/weather",
-    "pages/index/index",
-    "pages/sign/sign"
+    "pages/sign/sign",
+    "pages/index/index"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
