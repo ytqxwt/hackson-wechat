@@ -15,6 +15,7 @@ function getWeatherData(cityName, callback) {
     if (!cityName) {
         //如果不存在，则使用定位到的城市信息
         cityName = app.city
+        console.log("" + cityName);
     }
     //调用天气API查询气象信息
     var weApi = "https://free-api.heweather.com/v5/weather";
