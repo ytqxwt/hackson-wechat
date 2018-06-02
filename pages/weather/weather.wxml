@@ -1,0 +1,16 @@
+<view>
+    <button bindtap="addWeather">添加一个天气卡片</button>
+    <view>
+        <form bindsubmit="weatherSubmit">
+            <view class="section">
+                <view class="section__title">我的:</view>
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                    <view class="picker">当前选择：{{array[index]}}</view>
+                </picker>
+            </view>
+            所在城市：
+            <input type="text" placeholder="请输入城市"></input>
+            <button form-type="submit">完成</button>
+        </form>
+    </view>
+</view>
