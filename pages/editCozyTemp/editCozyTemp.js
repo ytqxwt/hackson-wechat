@@ -1,23 +1,43 @@
 Page({
   data: {
+     listData: [
+     "爸爸", "妈妈", "弟弟" 
+    ],
+    number: null,
+    showModalStatus: false,
     nodes: [{
       name: 'div',
       attrs: {
         class: 'div_class',
         style: 'line-height: 60px; color: red;'
       },
-      children: [{
-        type: 'text',
-        text: 'Hello&nbsp;World!'
-      }]
     }],
     tempFilePaths: '',
+    texts: [{
+      number: 10,
+      text1: "今天将会下雨",
+      text2: "出行记得带伞",
+    }, {
+      number: 11,
+      text1: "早安",
+      text2: "亲爱的",
+    },
+    {
+      number: 20,
+      text: ''
+    },
+    ]
+
+
+
   },
   tap() {
     console.log('tap')
   },
 
+  submitMessage() {
 
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -126,4 +146,65 @@ Page({
       }
     })
   },
+
+
+  chooseLesson: function (e) {
+    var arr = this.data.listData;
+    var cName = arr[0].cName;
+    this.setData({
+      changeLesson: cName
+    })
+  },
+  powerDrawer: function (e) {
+    var currentStatu = e.currentTarget.dataset.statu;
+    this.util(currentStatu)
+  },
+  util: function (currentStatu) {
+    /* 动画部分 */
+    // 第1步：创建动画实例   
+    var animation = wx.createAnimation({
+      duration: 200,  //动画时长  
+      timingFunction: "linear", //线性  
+      delay: 0  //0则不延迟  
+    });
+
+    // 第2步：这个动画实例赋给当前的动画实例  
+    this.animation = animation;
+
+    // 第3步：执行第一组动画  
+    animation.opacity(0).rotateX(-100).step();
+
+    // 第4步：导出动画对象赋给数据对象储存  
+    this.setData({
+      animationData: animation.export()
+    })
+
+    // 第5步：设置定时器到指定时候后，执行第二组动画  
+    setTimeout(function () {
+      // 执行第二组动画  
+      animation.opacity(1).rotateX(0).step();
+      // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象  
+      this.setData({
+        animationData: animation
+      })
+
+      //关闭  
+      if (currentStatu == "close") {
+        this.setData(
+          {
+            showModalStatus: false
+          }
+        );
+      }
+    }.bind(this), 200)
+
+    // 显示  
+    if (currentStatu == "open") {
+      this.setData(
+        {
+          showModalStatus: true
+        }
+      );
+    }
+  }
 })
