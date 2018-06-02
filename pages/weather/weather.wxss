@@ -1,0 +1,14 @@
+page{
+  background: #f9f9f9;
+}
+.add{
+  width: 100%;
+  height: 100rpx;
+  margin: 0 auto;
+}
+.card{
+  background:red;
+  width: 600rpx;
+  height: 300rpx;
+  margin: 0 auto;
+}

@@ -1,6 +1,9 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/chat-demo/chat-demo",
+    "pages/index/index",
+    "pages/yuying-demo/yuying-demo"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
