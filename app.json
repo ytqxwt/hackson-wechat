@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/messageIndex/messageIndex",
-    "pages/confessionMessage/confessionMessage",
+    "pages/newsTemp/newsTemp",
+    "pages/showTemp/showTemp",
+    "pages/editTemp/editTemp",
     "pages/weather/weather",
-    "pages/sign/sign",
     "pages/index/index"
 
   ],
