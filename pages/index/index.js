@@ -1,4 +1,4 @@
-import { swiperItems_student } from "./swiperItems";
+import { swiperItems } from "./swiperItems";
 //获取应用实例
 var app = getApp();
 Page({
@@ -15,7 +15,7 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      swiperItems: swiperItems_student
+      swiperItems: swiperItems
     })
   },
   onShow(e) {
@@ -25,7 +25,7 @@ Page({
 
 
     this.setData({
-      swiperItems: swiperItems_student,
+      swiperItems: swiperItems,
     })
     wx.request({
       url: 'http://geek-team.xin/student/findById',

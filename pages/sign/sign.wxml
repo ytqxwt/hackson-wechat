@@ -1,17 +1,13 @@
-  <view class="container">
-    
-    <view class="details">
-       <radio-group class="radio-group" bindchange="radioChange">
-        <label class="radio" wx:for="{{items}}" style='margin-right:50rpx;font-size:14px;'>
-          <radio value="{{item.name}}" checked="{{item.checked}}" style='margin-bottom:50rpx;'/>{{item.value}}
-        </label>
-      </radio-group> 
-      <button class="enter" form-type='submit'>进入</button>
-      <button class="sign" form-type='submit'>组建</button>
-    </view>
-
+<view class="container">
+  <view class="details">
+    <radio-group class="radio-group" bindchange="radio_chooseRole">
+      <label class="radio" wx:for="{{items}}" wx:key="*this" style="margin-right:50rpx;font-size:14px;">
+        <radio value="{{item.value}}" checked="{{item.checked}}" style="margin-bottom:50rpx;" />
+        {{item.name}}
+      </label>
+    </radio-group>
+    <button class="enter" form-type="submit" bindtap="button_enter">进入</button>
+    <button class="sign" open-type="share" form-type="submit" bindtap="button_build">组建</button>
   </view>
-
-  <image src='../../images/sign-bac.jpg' class="bac" />
-
-  
+</view>
+<image src="../../images/sign-bac.jpg" class="bac" />

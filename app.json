@@ -3,10 +3,14 @@
     "pages/index/index",
     "pages/newsTemp/newsTemp",
     "pages/editCozyTemp/editCozyTemp",
+<<<<<<< HEAD
     "pages/showTemp/showTemp",
     
     "pages/weather/weather",
     "pages/editConfessionTemp/editConfessionTemp" 
+=======
+    "pages/newsTemp/newsTemp"
+>>>>>>> ac6be21e93b74b31bdb052609d9ab2491736578f
   ],
   "window": {
     "navigationBarTitleText": "Love Contact",

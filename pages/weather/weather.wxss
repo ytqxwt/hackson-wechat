@@ -1,66 +1,76 @@
-page{
-  background: #f9f9f9;
+page {
+    background: #f9f9f9;
 }
-.add{
-  width: 100%;
-  height: 100rpx;
-  margin: 0 auto;
+
+.add {
+    width: 100%;
+    height: 100rpx;
+    margin: 0 auto;
 }
-.wrap{
-  width: 100%;
-  height: 300rpx;
-  position: relative;
-  margin-bottom: 40rpx;
+
+.wrap {
+    width: 100%;
+    height: 300rpx;
+    position: relative;
+    margin-bottom: 40rpx;
 }
-.card{
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 2px 2px 3px #bbbebf;
-  width: 560rpx;
-  height: 210rpx;
-  padding-left: 20rpx;
-  padding-right: 20rpx;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
-  display: flex;
-  flex-direction: column;
+
+.card {
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 2px 2px 3px #bbbebf;
+    width: 560rpx;
+    height: 210rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    display: flex;
+    flex-direction: column;
 }
-.bc{
-  width: 560rpx;
+
+.bc {
+    width: 560rpx;
 }
-.fill{
-  width: 500rpx;
-  margin-top: -13rpx;
-  margin-left: 20rpx;
-   display: flex;
-  flex-direction: column; 
-  font-size: 12px;
-  color: #666666;
+
+.fill {
+    width: 500rpx;
+    margin-top: -13rpx;
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #666666;
 }
-.fill1,.fill2{
-  display: flex;
-  flex-direction: row;
-  height: 60rpx;
-  margin-bottom: 10rpx;
+
+.fill1,
+.fill2 {
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+    margin-bottom: 10rpx;
 }
-.fill1 text,.fill2 text{
-  margin-top: 12rpx;
+
+.fill1 text,
+.fill2 text {
+    margin-top: 12rpx;
 }
-.fill1 input,.fill2 input{
-  height: 10rpx;
-  width: 300rpx;
-  border-bottom: 1px solid #666666;
+
+.fill1 input,
+.fill2 input {
+    height: 10rpx;
+    width: 300rpx;
+    border-bottom: 1px solid #666666;
 }
- .card .btn,.card .btn2{
-  width: 120rpx;
-  height: 50rpx;
-  font-size: 10px;
-  line-height: 50rpx;
-  background: #ff7263;
-  color: #ffffff;
-  margin-top: 10rpx;
-} 
-.card .btn2{
-  display: none;
+
+.card .btn,
+.card .btn2 {
+    width: 120rpx;
+    height: 50rpx;
+    font-size: 10px;
+    line-height: 50rpx;
+    background: #ff7263;
+    color: #ffffff;
+    margin-top: 10rpx;
 }
