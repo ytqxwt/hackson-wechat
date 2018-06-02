@@ -9,9 +9,9 @@
 
   ],
   "window": {
+    "navigationBarTitleText": "Love Contact",
+    "navigationBarTextStyle": "white",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#77c9d4",
-    "navigationBarTitleText": "FaceIn",
-    "navigationBarTextStyle": "white"
+    "navigationBarBackgroundColor": "#ffab32"
   }
 }
