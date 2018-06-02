@@ -11,6 +11,7 @@ Page({
     customItem: '',
     view_turnOnAdd: false,
     relation: null,
+    userData: null,
   },
   onLoad: function () {
     var that = this
@@ -97,7 +98,8 @@ function getCityWeather(that) {
         });
       }
       that.setData({
-        weatherInfo: _list
+        weatherInfo: _list,
+        userData: res.data
       });
     },
     fail: (e) => {

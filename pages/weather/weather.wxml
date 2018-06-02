@@ -29,7 +29,7 @@
     <image src="../../images/littleLove.png" style="position:absolute;width:300rpx;height:300rpx;right:0rpx;top:0rpx;" />
   </view>
   <!-- 获得的列表 -->
-  <view class="wrap" wx:for="{{}}">
+  <view class="wrap" wx:for="{{userData}}">
     <view class="card">
       <view class="bc">
         <image src="../../images/lovetop.png" style="width:560rpx;height:45rpx;margin-top:0rpx;margin-left:5rpx;" />
@@ -37,11 +37,13 @@
       <view class="fill">
         <view class="fill1">
           <text class="text1">我的：</text>
-          <input class="input1" />
+          <text>{{item.torole}}</text>
+          <!-- <input class="input1" /> -->
         </view>
         <view class="fill2">
           <text class="text2">所在城市：</text>
-          <input class="input2" />
+          <text>{{item.city}}</text>
+          <!-- <input class="input2" /> -->
         </view>
         <text wx:if="{{weatherInfo}}">{{weatherInfo[index]}}</text>
       </view>
