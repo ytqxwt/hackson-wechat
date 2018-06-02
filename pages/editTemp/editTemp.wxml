@@ -1,2 +1,8 @@
-<!--pages/editTemp/editTemp.wxml-->
-<text>pages/editTemp/editTemp.wxml</text>
+<!-- pages/editTemp/editTemp.wxml -->
+<view>
+    <button type="primary" bindtouchstart="startRecode" bindtouchend="endRecode" class="cxbtn">
+        按住录音（可选）
+    </button>
+    <button bindtap="chooseImage">插入图片</button>
+    <image src="{{tempFilePaths }}" mode="aspecFill" style="width:20rpx; height: 20rpx" />
+</view>

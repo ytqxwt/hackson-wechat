@@ -29,26 +29,49 @@ Page({
     let scale = imgWidth / oImgW; //比例计算 
     let imgHeight = oImgH * scale; //自适应高度 
     let images = this.data.images; let imageObj = null; for (let i = 0; i < images.length; i++) { let img = images[i]; if (img.id === imageId) { imageObj = img; break; } } imageObj.height = imgHeight; let loadingCount = this.data.loadingCount - 1; let col1 = this.data.col1; let col2 = this.data.col2; //判断当前图片添加到左列还是右列 
-    if (col1H <= col2H) { col1H += imgHeight; col1.push(imageObj); } else { col2H += imgHeight; col2.push(imageObj); } let data = { loadingCount: loadingCount, col1: col1, col2: col2 }; //当前这组图片已加载完毕，则清空图片临时加载区域的内容
+    if (col1H <= col2H) {
+      col1H += imgHeight;
+      col1.push(imageObj);
+    } else {
+      col2H += imgHeight;
+      col2.push(imageObj);
+    }
+    let data = {
+      loadingCount: loadingCount,
+      col1: col1,
+      col2: col2
+    }; //当前这组图片已加载完毕，则清空图片临时加载区域的内容
     if (!loadingCount) { data.images = []; } this.setData(data);
   },
   loadImages: function () {
-    let images = [{ pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 },
-    { pic: "../../images/1.png", height: 0 }];
+    let images = [
+      { pic: "../../images/" + this.data.selection + ".1.png", height: 0 },
+      { pic: "../../images/" + this.data.selection + ".2.png", height: 0 },
+      { pic: "../../images/" + this.data.selection + ".3.png", height: 0 },
+
+      { pic: "../../images/" + this.data.selection + ".4.png", height: 0 },
+      { pic: "../../images/" + this.data.selection + ".5.png", height: 0 },
+      { pic: "../../images/" + this.data.selection + ".3.png", height: 0 },
+
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 },
+      // { pic: "../../images/1.png", height: 0 }
+    ];
     let baseId = "img-" + (+new Date());
-    for (let i = 0; i < images.length; i++) { images[i].id = baseId + "-" + i; }
-    this.setData({ loadingCount: images.length, images: images });
+    for (let i = 0; i < images.length; i++) {
+      images[i].id = baseId + "-" + i;
+    }
+    this.setData({
+      loadingCount: images.length,
+      images: images
+    });
   }
 })

@@ -1,7 +1,7 @@
 /* pages/showTemp/showTemp.wxss */
 .img_item {
-  width: 48%;
-  margin: 1%;
-  display: inline-block;
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
   vertical-align: top;
 }
