@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/messageIndex/messageIndex",
     "pages/weather/weather",
     "pages/index/index",
     "pages/NewsTemp/newsTemp",
     "pages/sign/sign"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

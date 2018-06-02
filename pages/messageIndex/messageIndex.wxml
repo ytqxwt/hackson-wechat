@@ -1,0 +1,6 @@
+ 
+ <view class="container">
+  测试文本
+ </view>
+ 
+ <image src='../../images/messageIndex.jpg' class="bac" />
