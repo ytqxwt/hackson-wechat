@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/newsTemp/newsTemp",
-    "pages/editCozyTemp/editCozyTemp",
-    "pages/editConfessionTemp/editConfessionTemp",
-    "pages/showTemp/showTemp",
+    "pages/index/index",
     "pages/weather/weather",
-    "pages/index/index"
-
+    "pages/showTemp/showTemp",
+    "pages/editConfessionTemp/editConfessionTemp",
+    "pages/editCozyTemp/editCozyTemp",
+    "pages/newsTemp/newsTemp"
+    
   ],
   "window": {
     "navigationBarTitleText": "Love Contact",

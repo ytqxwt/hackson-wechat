@@ -166,6 +166,7 @@ radio{
 }
 .selection4-content{
   width: 690rpx;
+  height: 550rpx;
   background: white;
   margin: 0 auto;
   box-shadow: 10rpx 10rpx 50rpx 2rpx #bbbaba;
@@ -175,11 +176,11 @@ radio{
   height: 90rpx;
   line-height: 100rpx;
   width: 500rpx;
-  color: #6389d0;
+  color: #ff6732;
   font-size: 12px;
   margin:0 auto;
   text-align: center;
-  border-bottom: 1px solid #6389d0;
+  border-bottom: 1px solid #ff6732;
 }
 .selection4-content .edit{
   width: 500rpx;
