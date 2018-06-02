@@ -6,3 +6,5 @@
 <view wx:for='{{[1,2,3]}}'>
 <view>aaa</view>
 </view>
+<input type="text" bindinput="bind"></input>
+<text>{{test}}</text>

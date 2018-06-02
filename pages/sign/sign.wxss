@@ -8,20 +8,20 @@ page{
 .container{
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.5);
   position: absolute;
 }
 .details{
   border: 1px solid rgba(255,255,255,0.5);
   border-radius: 8px;
-  background:rgba(255,255,255,0.4);
+  background:rgba(0,0,0,0.1);
   width: 400rpx;
   height: 500rpx; 
   padding-left: 50rpx;
   padding-right: 30rpx;
   padding-top: 50rpx;
   color: #fafafa;
-   box-shadow: 2px 3px 2px rgba(0,0,0,.4); 
+  box-shadow: 2px 3px 2px rgba(0,0,0,.4); 
+  margin: 340rpx auto;
 }
 radio {  
   transform:scale(0.5);  

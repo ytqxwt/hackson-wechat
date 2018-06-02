@@ -4,6 +4,7 @@ var socket
 Page({
   data: {
     message: null,
+    test:''
   },
   onTap() {
     socket = (this.socket = io(
@@ -22,5 +23,8 @@ Page({
     this.socket.emit("message", "hello", function (d) { console.log(d) })
     this.socket.emit("broadcast", "hello", function (d) { console.log(d) })
     this.socket.on("broadcast",  function (d) { console.log(d) })
+  },
+  bind(e){
+    console.log(e)
   },
 })
