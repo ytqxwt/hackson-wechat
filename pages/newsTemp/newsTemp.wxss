@@ -1,1 +1,7 @@
 /* pages/NewsTemp/newsTemp.wxss */
+.section1{
+    
+    width: auto;
+    height:200 rpx ;
+    background-color: aqua
+}

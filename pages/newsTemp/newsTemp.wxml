@@ -1,2 +1,18 @@
-<!--pages/NewsTemp/newsTemp.wxml-->
-<text>pages/NewsTemp/newsTemp.wxml</text>
+<!-- pages/NewsTemp/newsTemp.wxml -->
+<view>
+    <navigator url="">
+        <view class="section1">
+            <view>日常叮嘱</view>
+        </view>
+    </navigator>
+    <navigator url="">
+        <view class="section1">
+            <view>暖心告白</view>
+        </view>
+    </navigator>
+    <navigator url="">
+        <view class="section1">
+            <view>理解万岁</view>
+        </view>
+    </navigator>
+</view>

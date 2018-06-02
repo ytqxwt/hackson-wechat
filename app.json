@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/showTemp/showTemp",
+    "pages/NewsTemp/newsTemp",
     "pages/weather/weather",
     "pages/index/index",
-    "pages/NewsTemp/newsTemp"
+    "pages/editTemp/editTemp"
   ],
   "window": {
     "backgroundTextStyle": "light",

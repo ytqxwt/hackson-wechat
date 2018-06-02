@@ -1,0 +1,3 @@
+<template name="wt_main">
+    <block wx:if="{{status == 'ok'}}"></block>
+</template>
