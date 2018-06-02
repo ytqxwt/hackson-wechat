@@ -1,0 +1,11 @@
+<view class="container">
+
+  <view class="add">
+     <image src='../../images/add.png' style='width:22px;height:22px;float:right;margin-right:30rpx;margin-top:22rpx;'/> 
+  </view>
+
+  <view class="card">
+    
+  </view>
+
+</view>

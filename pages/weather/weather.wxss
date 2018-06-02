@@ -1,0 +1,16 @@
+page{
+  background: #f9f9f9;
+}
+.add{
+  width: 100%;
+  height: 100rpx;
+  margin: 0 auto;
+}
+.card{
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 2px 2px 3px #bbbebf;
+  width: 600rpx;
+  height: 220rpx;
+  margin: 0 auto;
+}
