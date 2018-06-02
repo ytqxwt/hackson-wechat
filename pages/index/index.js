@@ -1,66 +1,196 @@
-// pages/index.js
+import { swiperItems_student, swiperItems_teacher } from "./swiperItems";
+var util = require("../../utils/util.js");
+//获取应用实例
+var app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    data_swiperItems: {},
+    defaultUrl: "/pages/sign/sign",
+    isStudent: true,//真正是学生
+    chooseStudent: true,//选择学生单选框
+    sId: null,
+    sImg: "/images/head.png",
+    sName: "520快乐",
+    sTodayCourse: null,
+    showDot: 0,
+  },
+  onLoad: function (e) {
+
+    var _this = this;
+    // 页面初始化 options为页面跳转所带来的参数
+    util.getWeatherData(null, function (wd) {
+      _this.setData({ wd: wd });
+      console.log("??啥" + wd);
+    });
+
+    this.setData({
+      data_swiperItems: swiperItems_student
+    })
+  },
+  onShow(e) {
+    var that = this;
+    synchronizeDataFromGlobalData(that);
+    if (this.data.sId != null) {
+      if (this.data.isStudent) {
+        this.setData({
+          data_swiperItems: swiperItems_student,
+        })
+        wx.request({
+          url: 'http://geek-team.xin/student/findById',
+          data: {
+            sId: this.data.sId,
+          },
+          success(e) {
+            that.setData(e.data)
+            app.globalData.sName = e.data.sName
+            getTodayCourse(that)
+            downloadHeaderImage(that, e)
+          },
+        })
+      } else {
+        this.setData({
+          data_swiperItems: swiperItems_teacher,
+        })
+        wx.request({
+          url: 'http://geek-team.xin/teacher/findById',
+          data: {
+            tId: this.data.sId,
+          },
+          success(e) {
+            wx.downloadFile({
+              url: `http://geek-team.xin/file/downloadFile?uri=${e.data.tImg}`,
+              success(res) {
+                if (res.statusCode === 200) {
+                  that.setData({
+                    sImg: res.tempFilePath,
+                    sName: e.data.tName
+                  })
+                  app.globalData.sImg = res.tempFilePath
+                  app.globalData.sName = e.data.tName
+                } else {
+                  console.log(res.data)
+                }
+              },
+              fail: (e) => console.log(e)
+            })
+            wx.request({
+              url: `http://geek-team.xin/schedule/wx_getTeacherScheduleByDay?tId=${that.data.sId}`,
+              method: 'POST',
+              success(res) {
+                console.log(res)
+                //{{item.cAddress}}{{item.cName}}{{item.time}}
+                if (res.data.length != 0) {
+                  that.setData({
+                    sTodayCourse: res.data
+                  })
+                }
+              },
+              fail: (e) => console.log(e)
+            })
+
+            getTodayCourse(that);
+            downloadHeaderImage(that, e)
+
+          },
+        })
+      }
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  radioChange_stuOrTea(e) {
+    if (e.detail.value == 'teacher') {
+      this.setData({
+        data_swiperItems: swiperItems_teacher,
+        chooseStudent: false,
+      })
+    } else {
+      this.setData({
+        data_swiperItems: swiperItems_student,
+        chooseStudent: true,
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  swiperChange(e) {
+    //e.detail.current   0 1 2
+    //console.log(e)
+    this.setData({
+      showDot: e.detail.current
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })
+
+/*
+* 同步全局变量到页面
+*/
+function synchronizeDataFromGlobalData(that) {
+  that.setData({
+    isStudent: app.globalData.isStudent,
+    sId: app.globalData.sId,
+    sImg: app.globalData.sImg,
+    sName: app.globalData.sName
+  })
+}
+/*
+* 获取备忘录
+*/
+function getTodoList() {
+  wx.getStorage({
+    key: 'todolist',
+    success: function (res) {
+      if (res.data) {
+        that.setData({
+          lists: res.data
+        })
+      }
+    }
+  })
+}
+/*
+* 获得今天课程
+*/
+function getTodayCourse(that) {
+  console.log(that)
+  var wx_getWhat = that.data.isStudent ? '' : "Teacher";
+  var idWhat = that.data.isStudent ? 'sId' : 'tId'
+  wx.request({
+    url: `http://geek-team.xin/schedule/wx_get${wx_getWhat}ScheduleByDay?${idWhat}=${that.data.sId}`,
+    method: 'POST',
+    success(res) {
+      // console.log(res)
+      //{{item.cAddress}}{{item.cName}}{{item.tName}}{{item.time}}
+      //{{item.cAddress}}{{item.cName}}{{item.time}}
+      if (res.data != []) {
+        that.setData({
+          sTodayCourse: res.data
+        })
+        console.log(res.data)
+      }
+    },
+    fail: (e) => console.log(e)
+  })
+}
+/*
+* 下载头像
+*/
+function downloadHeaderImage(that, e) {
+  var _isStudent = that.data.isStudent
+  wx.downloadFile({
+    url: `http://geek-team.xin/file/downloadFile?uri=${_isStudent ? e.data.sImg : e.data.tImg}`,
+    success(res) {
+      if (res.statusCode === 200) {
+        that.setData({
+          sImg: res.tempFilePath,
+          sName: _isStudent ? e.data.sName : e.data.tName
+        })
+        app.globalData.sImg = res.tempFilePath
+        app.globalData.sName = _isStudent ? e.data.sName : e.data.tName
+        console.log('下载成功，啦啦啦')
+      } else {
+        console.log(res)
+      }
+    },
+    fail: (e) => console.log(e)
+  })
+}
+
+
