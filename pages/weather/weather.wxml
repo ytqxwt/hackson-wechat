@@ -1,15 +1,20 @@
+<import src="/pages/public/temp.wxml" />
 <view>
     <button bindtap="addWeather">添加一个天气卡片</button>
-    <view>
+    <view wx:for="{{cityArray}}" wx:key="*this" wx:if="{{cityArray}}">
         <form bindsubmit="weatherSubmit">
             <view class="section">
                 <view class="section__title">我的:</view>
-                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-                    <view class="picker">当前选择：{{array[index]}}</view>
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{relationArray}}">
+                    <view class="picker">当前选择：{{relationArray[index]}}</view>
                 </picker>
             </view>
-            所在城市：
-            <input type="text" placeholder="请输入城市"></input>
+            <view class="section">
+                <view class="section__title">所在城市：</view>
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                    <view class="picker">当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+                </picker>
+            </view>
             <button form-type="submit">完成</button>
         </form>
     </view>
