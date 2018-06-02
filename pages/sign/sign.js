@@ -17,14 +17,14 @@ Page({
     var that = this
     getOpenIdTap(that);
   },
-  /* onShareAppMessage(config){
+   onShareAppMessage(config){
      console.log(config)
      return {
        title:'',//转发标题
        path:'',//转发路径
        //imageUrl,//自定义图片路径
      }
-   },*/
+   },
   radio_chooseRole(e) {
     /* 选择角色 */
     console.log(e.detail.value)
@@ -34,19 +34,43 @@ Page({
   },
   button_enter() {
     /* 进入键 注册 跳主页 */
-    
+    wx.request({
+      url: 'http://localhost:8443/user/set',
+      method: 'POST',
+      data: {
+        openId: OPEN_ID,
+        role: this.data.role,
+        familyId: OPEN_ID
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: (res) => {
+        if (res = 'true') {
+          //跳转主页
+          wx.redirectTo({
+            url: '/pages/index/index',
+          })
+        } else {
+          wx.showToast({
+            title: `注册失败${res}`,
+            icon: '/images/error.png',
+          })
+        }
+      }
+    })
 
 
   },
   button_build() {
     /* 组建键 */
     wx.showShareMenu({
-      withShareTicket:true,
-      success:(e)=>{
-        console.log(e+"ok")
+      withShareTicket: true,
+      success: (e) => {
+        console.log("转发成功")
       },
-      fail(){
-        console.log("fail");
+      fail() {
+        console.log("转发失败");
       }
     })
 

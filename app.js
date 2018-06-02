@@ -5,35 +5,42 @@ var SESSION_KEY = ''//储存获取到session_key
 App({
   onLaunch: function () {
     getOpenIdTap(this)
-    //查询数据库是否有该用户
-    wx.request({
-      url: 'http://localhost:8443/user/isFirst',
-      method: 'POST',
-      data: {
-        openId: OPEN_ID,
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: (res) => {
-        if(res){
-          wx.redirectTo({
-            url:'/pages/sign/sign',
-          })
-        }
-      }
-    })
+    //查询数据库是否有该用户,首次进入跳转sign
+    // redirectToSign();
   },
   globalData: {
     familyId: null,
-    userId: null,
+    openId: null,
     role: null
   }
 })
 
+function redirectToSign() {
+  wx.request({
+    url: 'http://localhost:8443/user/isFirst',
+    method: 'POST',
+    data: {
+      openId: OPEN_ID,
+    },
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    success: (idFirst) => {
+      if (idFirst) {
+        wx.redirectTo({
+          url: '/pages/sign/sign',
+        });
+      }
+    }
+  });
+}
+
 /*
 * 获取openid
 */
+
+
+
 function getOpenIdTap(that) {
   wx.login({
     success: function (res) {
@@ -51,6 +58,7 @@ function getOpenIdTap(that) {
           console.log(res.data)
           OPEN_ID = res.data.openid;//获取到的openid  
           SESSION_KEY = res.data.session_key;//获取到session_key  
+          that.globalData.openId = res.data.openid;
         }
       })
     }

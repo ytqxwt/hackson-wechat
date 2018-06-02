@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/weather/weather",
     "pages/sign/sign",
+    "pages/index/index",
+    
     "pages/chatDemo/chatDemo",
-    "pages/messageIndex/messageIndex",
-    "pages/weather/weather"
+    "pages/messageIndex/messageIndex"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
