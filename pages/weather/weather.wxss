@@ -7,10 +7,10 @@ page{
   margin: 0 auto;
 }
 .wrap{
-  background: red;
   width: 100%;
   height: 300rpx;
   position: relative;
+  margin-bottom: 40rpx;
 }
 .card{
   margin: 0 auto;
@@ -52,7 +52,7 @@ page{
   width: 300rpx;
   border-bottom: 1px solid #666666;
 }
-/* .card .btn{
+ .card .btn,.card .btn2{
   width: 120rpx;
   height: 50rpx;
   font-size: 10px;
@@ -60,4 +60,7 @@ page{
   background: #ff7263;
   color: #ffffff;
   margin-top: 10rpx;
-} */
+} 
+.card .btn2{
+  display: none;
+}
