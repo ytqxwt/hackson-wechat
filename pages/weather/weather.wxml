@@ -4,8 +4,32 @@
      <image src='../../images/add.png' style='width:22px;height:22px;float:right;margin-right:30rpx;margin-top:22rpx;'/> 
   </view>
 
-  <view class="card">
+  
+  <view class="wrap">
+    <view class="card">
+
+      <!-- <view class="bc" wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13]}}">
+        <image src='../../images/love.png' style='width:13px;height:13px;'/>
+      </view> -->
+
     
+      <view class="bc">
+        <image src='../../images/lovetop.png' style='width:560rpx;height:45rpx;margin-top:0rpx;margin-left:5rpx;'/>
+      </view>
+
+      <view class="fill">
+        <view class="fill1">
+          <text class="text1">我的：</text><input class="input1" />
+        </view>
+        <view class="fill2">
+          <text class="text2">所在城市：</text><input class="input2" />
+        </view>
+      </view>
+
+      <!-- <button class="btn">保存</button> -->
+
+    </view>
+    <image src='../../images/littleLove.png' style='position:absolute;width:200rpx;height:300rpx;'/>
   </view>
 
 </view>
