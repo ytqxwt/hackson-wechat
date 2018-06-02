@@ -5,14 +5,14 @@
 <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
     <view style="width:100%">
         <view class="img_item" wx:for="{{col1}}" wx:key="id">
-            <navigator url="/pages/editTemp/editTemp?selection={{selection}}&tempName={{index}}">
+            <navigator url="/pages/editCozyTemp/editCozyTemp?selection={{selection}}&tempName={{index}}">
                 <view data-index="{{index}}">
                     <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
                 </view>
             </navigator>
         </view>
         <view class="img_item">
-            <navigator url="/pages/editTemp/editTemp?selection={{selection}}&tempName={{index}}">
+            <navigator url="/pages/editCozyTemp/editCozyTemp?selection={{selection}}&tempName={{index}}">
                 <view wx:for="{{col2}}" wx:key="id">
                     <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
                 </view>

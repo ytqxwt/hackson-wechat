@@ -1,5 +1,6 @@
 Page({
   data: {
+    number:null,
     nodes: [{
       name: 'div',
       attrs: {

@@ -1,16 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/newsTemp/newsTemp",
+    "pages/editCozyTemp/editCozyTemp",
+    "pages/editConfessionTemp/editConfessionTemp",
     "pages/showTemp/showTemp",
-    "pages/editTemp/editTemp",
-<<<<<<< HEAD
     "pages/weather/weather",
     "pages/index/index"
 
-=======
-    "pages/weather/weather"
->>>>>>> 1614878154377bf81586c68794e6d91385a5524d
   ],
   "window": {
     "backgroundTextStyle": "light",
