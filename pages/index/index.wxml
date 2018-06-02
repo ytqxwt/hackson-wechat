@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
@@ -11,3 +12,97 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
+=======
+<import src="/pages/public/temp.wxml" />
+<template is="wt_main" data="{{...wd}}" />
+<view class="container">
+  <view class="selection1">
+    <view class="s1-left"></view>
+    <navigator url="/pages/sign/sign">
+      <view class="s1-mid" bindtap="register">
+        <view>
+          <image wx:if="{{sImg}}" src="{{sImg}}" class="mid-img"></image>
+        </view>
+        <text>{{sName}}</text>
+      </view>
+    </navigator>
+    <view class="s1-right">
+      <view>
+        <radio-group bindchange="radioChange_stuOrTea">
+          <label class="raido1">
+            <radio value="student" checked="{{chooseStudent}}" />
+            学生
+          </label>
+          <label class="raido2">
+            <radio value="teacher" checked="{{!chooseStudent}}" />
+            教师
+          </label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <template name="swiper-items">
+    <view class="selection2" style="position:relative;">
+      <swiper current="{{showDot}}" bindchange="swiperChange" class="swiper-box" duration="300" display-multiple-items="4" style="height:{{winHeight-31}}px;width:800rpx;">
+        <swiper-item class="swiperItems" wx:key="*this" wx:for="{{swiperItems}}">
+          <!-- 保留关键字 *this 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字 -->
+          <navigator url="{{sId?item.url:(chooseStudent?'/pages/sign/sign':'/pages/tSign/tSign')}}" style="text-align:center">
+            <view class="{{item.class}} itemView" bindtap="{{item.bind}}" style="margin-left:18rpx;">
+              <image src="{{item.image}}" style="width:30px;height:30px;margin:24rpx auto;" />
+            </view>
+            <text class="itemText">{{item.text}}</text>
+          </navigator>
+        </swiper-item>
+      </swiper>
+    </view>
+  </template>
+  <template is="swiper-items" data="{{...data_swiperItems}}" />
+  <view class="selection3">
+    <view class="top">
+      <navigator url="" hover-class="none" bindtap="changeColor1">
+        <text style="color:{{color1}}">今日课程</text>
+      </navigator>
+    </view>
+    <view class="bottom">
+      <view wx:if="{{isStudent}}">{{item.cAddress}}{{item.cName}}{{item.time}}</view>
+      <text wx:if="{{!isStudent}}">{{item.cAddress}}{{item.cName}}{{item.time}}</text>
+      <view class="table">
+        <view class="tr bg-w">
+          <view class="th">时间</view>
+          <view class="th">课程</view>
+          <view class="th ">教室</view>
+        </view>
+        <block wx:for="{{sTodayCourse}}" wx:key="*this" wx:if="{{sTodayCourse}}">
+          <view class="tr bg-g">
+            <view class="td">{{item.time}}</view>
+            <view class="td">{{item.cName}}</view>
+            <view class="td">{{item.cAddress}}</view>
+          </view>
+        </block>
+      </view>
+      <text wx:if="{{sTodayCourse.length==0&&sId}}">今天没课</text>
+      <navigator wx:if="{{!sId}}" url="{{chooseStudent?'/pages/sign/sign':'/pages/tSign/tSign'}}" hover-class="none">
+        <text>你还没有登录哦！点此登录</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="selection4">
+    <view class="selection4-content">
+      <view class="tittle">备忘录</view>
+      <view wx:for="{{lists}}" wx:if="{{showAll ||(!showAll && !item.done)}}" wx:key="*this" id="{{item.id}}" class="todolist" style="width:480rpx;margin:0 auto;font-size:13px;color:#666666">
+        <view style="margin:0rpx auto;width:480rpx;border-bottom:1px solid #d6d6d6;border-radius:3px;padding:10rpx;">
+          <text>{{index+1}}:</text>
+          <text data-id="{{index}}" class="cnt">{{item.content}}</text>
+          <text class="time">{{item.beginTime}}-{{item.finishTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="selection5">
+    <ad class="ads">hahaha</ad>
+  </view>
+</view>
+<view style="{{showDot==0?'':'color:blue'}}">一</view>
+<view style="{{showDot==1?'':'color:blue'}}">二</view>
+<view style="{{showDot==2?'':'color:blue'}}">三</view>
+>>>>>>> 1614878154377bf81586c68794e6d91385a5524d

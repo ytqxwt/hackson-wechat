@@ -1,6 +1,15 @@
 App({
   onLaunch: function () {
+    latitude: 40.137257;
+
+    //创建变量保存经度
+    longitude: 116.680165;
+
+    //创建一个变量，保存当前城市信息
+    city: "";
     var _this = this;
+    //创建变量保存纬度
+
     //一加载，获取用户的位置信息
     wx.getLocation({
       success: function (res) {
@@ -17,7 +26,7 @@ App({
         wx.request({
           url: bdAPI,
           success: function (res) {
-            //console.log(res.data.result.addressComponent.city);
+            console.log(res.data.result.addressComponent.city);
             _this.city = res.data.result.addressComponent.city;
           }
         })
@@ -29,12 +38,5 @@ App({
     userId: null,
     role: null
   },
-  //创建变量保存纬度
-  latitude: 40.137257,
 
-  //创建变量保存经度
-  longitude: 116.680165,
-
-  //创建一个变量，保存当前城市信息
-  city: "北京市"
 })
