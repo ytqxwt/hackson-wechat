@@ -1,7 +1,7 @@
 var swiperItems_student = [{
     url: "/pages/camera/camera",
     class: 'sign-img',
-    image: '../../images/calendar.png',
+    image: '../../images/weather.png',
     text: '异地天气',
 },
 {
