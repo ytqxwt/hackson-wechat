@@ -2,7 +2,9 @@
   "pages": [
     "pages/weather/weather",
     "pages/index/index",
-    "pages/NewsTemp/newsTemp"
+    "pages/NewsTemp/newsTemp",
+    "pages/sign/sign"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,16 +1,71 @@
-<view>
-    <button bindtap="addWeather">添加一个天气卡片</button>
-    <view>
-        <form bindsubmit="weatherSubmit">
-            <view class="section">
-                <view class="section__title">我的:</view>
-                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-                    <view class="picker">当前选择：{{array[index]}}</view>
-                </picker>
-            </view>
-            所在城市：
-            <input type="text" placeholder="请输入城市"></input>
-            <button form-type="submit">完成</button>
-        </form>
+<view class="add" bindtap="addWeather">
+     <image src='../../images/add.png' style='width:22px;height:22px;float:right;margin-right:30rpx;margin-top:22rpx;'/> 
+  </view>
+
+
+  <view class="wrap">
+
+    <view class="card">
+
+      <!-- <view class="bc" wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13]}}">
+        <image src='../../images/love.png' style='width:13px;height:13px;'/>
+      </view> -->
+
+    
+      <view class="bc">
+        <image src='../../images/lovetop.png' style='width:560rpx;height:45rpx;margin-top:0rpx;margin-left:5rpx;'/>
+      </view>
+    <form bindsubmit="weatherSubmit"> 
+        <view class="fill">
+          <view class="fill1">
+            <text class="text1">我的：</text> 
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                      <view class="picker">{{array[index]}}</view>
+                  </picker>
+                  <!--<input class="input1" />-->
+          </view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="fill2">
+            <text class="text2">所在城市：</text><input class="input2" placeholder="请输入城市"/>
+          </view>
+        </view>
+
+        <button form-type="submit" class="btn">保存</button> 
+    </form>
     </view>
+
+    <image src='../../images/littleLove.png' style='position:absolute;width:300rpx;height:300rpx;right:0rpx;top:0rpx;'/>
+  </view>
+
+  <view class="wrap">
+
+    <view class="card">
+
+      <!-- <view class="bc" wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13]}}">
+        <image src='../../images/love.png' style='width:13px;height:13px;'/>
+      </view> -->
+
+    
+      <view class="bc">
+        <image src='../../images/lovetop.png' style='width:560rpx;height:45rpx;margin-top:0rpx;margin-left:5rpx;'/>
+      </view>
+
+      <view class="fill">
+        <view class="fill1">
+          <text class="text1">我的：</text><input class="input1" />
+        </view>
+        <view class="fill2">
+          <text class="text2">所在城市：</text><input class="input2" />
+        </view>
+      </view>
+
+       <button class="btn" form-type='submit' bindtap='change'>保存</button>
+       <button class="btn2" form-type='submit'>小叮嘱</button>
+       
+
+    </view>
+
+    <image src='../../images/littleLove.png' style='position:absolute;width:300rpx;height:300rpx;right:0rpx;top:0rpx;'/>
+  </view>
+
 </view>
