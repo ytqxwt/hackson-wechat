@@ -1,0 +1,34 @@
+
+<!-- <view>
+    <image src="/images/record.png" bindtouchstart="startRecode" bindtouchend="endRecode">
+        按住录音
+    </image> -->
+    <!-- <button type="primary" bindtouchstart="startRecode" bindtouchend="endRecode" class="cxbtn">
+        按住录音（可选）
+    </button> -->
+    <!-- <image src="/images/picture.png" bindtap="chooseImage">插入图片</image>
+    <image src="{{tempFilePaths }}" mode="aspecFill" style="width:20rpx; height: 20rpx" />
+</view> -->
+
+<view class="container">
+
+  <view class="specific_template">
+    <view class="text">
+      <input />
+      <view>今天将会下雨</view>
+      <view>出行记得带伞</view>
+    </view>
+    <image src='../../images/15-2.png' style='width:700rpx;height:700rpx;margin-left:30rpx;margin-top:130rpx;'/> 
+  </view>
+
+  <view class="chosen">
+
+    <image src="/images/record.png" bindtouchstart="startRecode" bindtouchend="endRecode" style='width:30px;height:30px;' />
+
+    <image src="/images/picture.png" bindtouchstart="startRecode" bindtouchend="endRecode" style='width:30px;height:30px;' />
+
+    <image src="/images/music2.png" bindtouchstart="startRecode" bindtouchend="endRecode" style='width:30px;height:30px;' />
+
+  </view>
+
+</view>

@@ -1,0 +1,14 @@
+<template name="wt_main">
+    <block wx:if="{{status == 'ok'}}">
+        <!-- 外部容器，可以纵向滚动 -->
+        <scroll-view class="outer" scroll-y>
+            <!-- 基本信息的view，包含城市、时间、更新日期等 -->
+            <view class="base_info inner">
+                <text class="city">{{city}}</text>
+                <text class="date">{{now}}</text>
+                <text class="update">{{upTime}} 更新</text>
+            </view>
+        </scroll-view>
+    </block>
+    <block wx:else>错误的城市信息</block>
+</template>

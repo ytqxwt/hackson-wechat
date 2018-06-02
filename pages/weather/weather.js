@@ -133,4 +133,3 @@ function getNoCityRelation(that) {
     }
   });
 }
-

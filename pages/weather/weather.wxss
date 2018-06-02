@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 page {
     background: #f9f9f9;
+=======
+page{
+  background: #f9f9f9;
+>>>>>>> db5f38173f0530d2a487bae661eff9e40dfd11d0
 }
 
 .add {
@@ -63,14 +68,12 @@ page {
     width: 300rpx;
     border-bottom: 1px solid #666666;
 }
-
-.card .btn,
-.card .btn2 {
-    width: 120rpx;
-    height: 50rpx;
-    font-size: 10px;
-    line-height: 50rpx;
-    background: #ff7263;
-    color: #ffffff;
-    margin-top: 10rpx;
-}
+ .card .btn,.card .btn2{
+  width: 120rpx;
+  height: 50rpx;
+  font-size: 10px;
+  line-height: 50rpx;
+  background: #ff7263;
+  color: #ffffff;
+  margin-top: 10rpx;
+} 

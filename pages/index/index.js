@@ -1,54 +1,78 @@
-//index.js
+import { swiperItems_student } from "./swiperItems";
 //获取应用实例
-const app = getApp()
-
+var app = getApp();
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    swiperItems: [],
+
+    isStudent: true,//真正是学生
+    chooseStudent: true,//选择学生单选框
+    sId: null,
+    sImg: "/images/head.png",
+    sName: "520快乐",
+    sTodayCourse: null,
+    showDot: 0,
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      swiperItems: swiperItems_student
     })
-  }
+  },
+  onShow(e) {
+    var that = this;
+    synchronizeDataFromGlobalData(that);
+    console.log(this.data.sId)
+
+
+    this.setData({
+      swiperItems: swiperItems_student,
+    })
+    wx.request({
+      url: 'http://geek-team.xin/student/findById',
+      data: {
+        sId: this.data.sId,
+      },
+      success(e) {
+        console.log(e)
+        that.setData(e.data)
+        app.globalData.sName = e.data.sName
+        getTodayCourse(that)
+        // downloadHeaderImage(that, e)
+      },
+    })
+
+    wx.request({
+      url: 'http://geek-team.xin/teacher/findById',
+      data: {
+        tId: this.data.sId,
+      },
+      success(e) {
+        getTodayCourse(that);
+        //downloadHeaderImage(that, e)
+      },
+    })
+
+  },
+
+  swiperChange(e) {
+    //e.detail.current   0 1 2
+    console.log(e)
+    this.setData({
+      showDot: e.detail.current
+    })
+  },
 })
+
+/*
+* 同步全局变量到页面
+*/
+function synchronizeDataFromGlobalData(that) {
+  that.setData({
+    isStudent: app.globalData.isStudent,
+    sId: app.globalData.sId,
+    sImg: app.globalData.sImg,
+    sName: app.globalData.sName
+  })
+}
+
+

@@ -1,17 +1,16 @@
 {
   "pages": [
-    "pages/weather/weather",
-    "pages/sign/sign",
     "pages/index/index",
-    
-    "pages/chatDemo/chatDemo",
-    "pages/messageIndex/messageIndex"
-    
+    "pages/weather/weather",
+    "pages/showTemp/showTemp",
+    "pages/editConfessionTemp/editConfessionTemp",
+    "pages/editCozyTemp/editCozyTemp",
+    "pages/newsTemp/newsTemp"
   ],
   "window": {
+    "navigationBarTitleText": "Love Contact",
+    "navigationBarTextStyle": "white",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#77c9d4",
-    "navigationBarTitleText": "FaceIn",
-    "navigationBarTextStyle": "white"
+    "navigationBarBackgroundColor": "#ffab32"
   }
 }
