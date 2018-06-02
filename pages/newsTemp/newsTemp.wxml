@@ -1,18 +1,20 @@
-<!-- pages/NewsTemp/newsTemp.wxml -->
-<view>
-    <navigator url="">
-        <view class="section1">
-            <view>日常叮嘱</view>
-        </view>
-    </navigator>
-    <navigator url="">
-        <view class="section1">
-            <view>暖心告白</view>
-        </view>
-    </navigator>
-    <navigator url="">
-        <view class="section1">
-            <view>理解万岁</view>
-        </view>
-    </navigator>
+<view class="container">
+    <view class="content">
+        <navigator class="navigator1" url="/pages/showTemp/showTemp?selection=2">
+            <image src="../../images/ball.png" style="position:absolute;width:100rpx;height:200rpx;top:-100rpx;" />
+            <view class="confession">暖心告白</view>
+            <image src="../../images/ball.png" style="position:absolute;width:100rpx;height:200rpx;top:-100rpx;right:0" />
+        </navigator>
+        <navigator class="navigator2" url="/pages/showTemp/showTemp?selection=3">
+            <image src="../../images/sun.png" style="position:absolute;width:120rpx;height:120rpx;top:-9rpx;" />
+            <view class="understanding">理解万岁</view>
+            <image src="../../images/sun.png" style="position:absolute;width:120rpx;height:120rpx;top:-9rpx;right:0" />
+        </navigator>
+        <navigator class="navigator3" url="/pages/showTemp/showTemp?selection=1">
+            <image src="../../images/heart.png" style="position:absolute;width:110rpx;height:110rpx;top:0rpx;" />
+            <view class="cozy">温馨叮嘱</view>
+            <image src="../../images/heart.png" style="position:absolute;width:110rpx;height:110rpx;top:0rpx;right:0" />
+        </navigator>
+    </view>
 </view>
+<image src="../../images/messageIndex.jpg" class="bac" />

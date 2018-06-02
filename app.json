@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/showTemp/showTemp",
     "pages/NewsTemp/newsTemp",
+    "pages/showTemp/showTemp",
     "pages/weather/weather",
     "pages/index/index",
     "pages/editTemp/editTemp"

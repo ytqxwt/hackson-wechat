@@ -1,13 +1,27 @@
 let col1H = 0; let col2H = 0;
 Page({
-  data: { scrollH: 0, imgWidth: 0, loadingCount: 0, images: [], col1: [], col2: [] }, onLoad: function () {
-    wx.getSystemInfo({
-      success: (res) => {
-        let ww = res.windowWidth; let wh = res.windowHeight; let imgWidth = ww * 0.48; let scrollH = wh; this.setData({ scrollH: scrollH, imgWidth: imgWidth }); //加载首组图片 
-        this.loadImages();
-      }
-    })
+  data: {
+    scrollH: 0,
+    imgWidth: 0,
+    loadingCount: 0,
+    images: [],
+    col1: [],
+    col2: [],
+    selection: null,
   },
+
+  onLoad: function (options) {
+    this.setData({
+      selection: options.selection
+    }),
+      wx.getSystemInfo({
+        success: (res) => {
+          let ww = res.windowWidth; let wh = res.windowHeight; let imgWidth = ww * 0.48; let scrollH = wh; this.setData({ scrollH: scrollH, imgWidth: imgWidth }); //加载首组图片 
+          this.loadImages();
+        }
+      })
+  },
+
   onImageLoad: function (e) {
     let imageId = e.currentTarget.id; let oImgW = e.detail.width; //图片原始宽度 
     let oImgH = e.detail.height; //图片原始高度 
