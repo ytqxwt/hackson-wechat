@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/messageIndex/messageIndex",
     "pages/weather/weather",
     "pages/index/index",
     "pages/sign/sign"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
