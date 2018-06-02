@@ -3,5 +3,8 @@ App({
 
   },
   globalData: {
+    familyId: null,
+    userId: null,
+    role: null
   }
 })
