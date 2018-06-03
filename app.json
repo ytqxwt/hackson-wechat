@@ -1,10 +1,9 @@
 {
   "pages": [
+    "pages/editCozyTemp/editCozyTemp",
     "pages/weather/weather",
     "pages/index/index",
-    
     "pages/showTemp/showTemp",
-    "pages/editCozyTemp/editCozyTemp",
     "pages/newsTemp/newsTemp"
   ],
   "window": {

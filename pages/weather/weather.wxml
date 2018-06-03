@@ -1,3 +1,4 @@
+<import src="/pages/public/temp.wxml" />
 <view class="container">
   <view class="add">
     <image bindtap="addNew" src="../../images/add.png" style="width:22px;height:22px;float:right;margin-right:30rpx;margin-top:22rpx;" />
@@ -10,18 +11,18 @@
       </view>
       <view class="fill">
         <view class="fill1">
-          <text class="text1">我的：{{relation}}</text>
-          <picker bindchange="bindPickerChange" value="{{relation}}" range="{{relationArray}}">
-            <view class="input1">记得改呀{{relationArray[index]}}</view>
+          <text class="text1">我的：</text>
+          <picker value="{{relation}}" bindchange="bindPickerChange" range="{{relationArray}}">
+            <view class="input1">{{relation}}</view>
           </picker>
-          <input class="input1" />
+          <!-- <input class="input1" /> -->
         </view>
         <view class="fill2">
-          <text class="text2">所在城市：</text>
+          <text class="text2">城市：</text>
           <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-            <view class="picker">当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+            <view class="picker input2">{{region[2]}}</view>
           </picker>
-          <input class="input2" />
+          <!-- <input class="input2" /> -->
         </view>
       </view>
       <button class="btn" bindtap="button_saveAdd">保存</button>
@@ -41,12 +42,12 @@
           <!-- <input class="input1" /> -->
         </view>
         <view class="fill2">
-          <text class="text2">所在城市：</text>
+          <text class="text2" style="width：500rpx;">城市：</text>
           <text>{{item.city}}</text>
           <!-- <input class="input2" /> -->
-          <text >{{item.weather}}</text>
+          <template is="wt_main" data="{{...d}}" />
+          <!-- <text>{{...d}}</text> -->
         </view>
-        
       </view>
       <button class="btn" form-type="submit" bindtap="change">保存</button>
     </view>

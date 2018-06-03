@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.8",
 	"appid": "wxb32df375196aa830",
-	"projectname": "hackson",
+	"projectname": "hack",
 	"scripts": {
 		"beforeCompile": "",
 		"beforePreview": "",

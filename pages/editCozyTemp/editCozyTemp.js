@@ -1,7 +1,7 @@
 Page({
   data: {
-     listData: [
-     "爸爸", "妈妈", "弟弟" 
+    listData: [
+      "爸爸", "妈妈", "弟弟"
     ],
     number: null,
     showModalStatus: false,
@@ -31,12 +31,16 @@ Page({
 
 
   },
-  tap() {
+  tap(e) {
     console.log('tap')
   },
 
-  submitMessage() {
-
+  submitMessage(e) {
+    var currentStatu = e.currentTarget.dataset.statu;
+    this.util(currentStatu)
+    app.globalData.socket.emit("sendTo", "hello", (d) => {
+      console.log(d)
+    })
   },
 
   /**
