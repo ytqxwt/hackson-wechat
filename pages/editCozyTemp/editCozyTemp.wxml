@@ -1,8 +1,9 @@
 <view class="container">
   <view class="specific_template">
-    <view class="add">
-      <image bindtap="powerDrawer" data-statu="open" src="../../images/ok.png" style="width:22px;height:22px;float:right;margin-right:30rpx;margin-top:22rpx;" />
+    <view class="add" bindtap="submitMessage">
+      <image  data-statu="open" src="../../images/ok.png" style="width:22px;height:22px;float:right;margin-right:30rpx;margin-top:22rpx;" />
     </view>
+<<<<<<< HEAD
   </view>
   <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
   <!-- content -->
@@ -19,6 +20,25 @@
             </view>
           </view>
         </view>
+=======
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+    <!-- content -->
+    <!-- 使用animation属性指定需要执行的动画 -->
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+      <!-- drawer content -->
+      <view class="drawer_title">请选择亲人</view>
+      <view class="drawer_content">
+        <view class="top grid">
+          <block wx:for="{{listData}}">
+            <view class="tr bg-g">
+              <view class="td">{{item}}</view>
+              <view class="td">{{item}}</view>
+              <view class="td">{{item}}</view>
+            </view>
+          </block>
+        </view>
+        <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+>>>>>>> 97276c689cb66859ec637deb61fe50f883ba8121
       </view>
     </view>
     <view class="text">

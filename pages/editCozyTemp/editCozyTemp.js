@@ -26,8 +26,8 @@ Page({
       text1: '今天是您的生日，感谢您给予我生命，感谢您抚育我成长，在今天这个重要的日子里，衷心的祝福您：生日快乐!'
     },
     {
-      number:30,
-      text1:'如果和父母闹矛盾了，要记得冷静哦！~'
+      number: 30,
+      text1: '如果和父母闹矛盾了，要记得冷静哦！~'
     }
     ]
 
@@ -38,6 +38,7 @@ Page({
     console.log('tap')
   },
 
+<<<<<<< HEAD
   submitMessage(e) {
     var currentStatu = e.currentTarget.dataset.statu;
     this.util(currentStatu)
@@ -45,6 +46,8 @@ Page({
       console.log(d)
     })
   },
+=======
+>>>>>>> 97276c689cb66859ec637deb61fe50f883ba8121
 
   /**
    * 生命周期函数--监听页面加载
@@ -127,11 +130,6 @@ Page({
 
   },
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
@@ -154,6 +152,14 @@ Page({
     })
   },
 
+
+  submitMessage(e) {
+    console.log('aaa')
+    console.log(app.globalData.socket)
+    app.globalData.socket.emit("sendTo", "hello", (d) => {
+      console.log(d)
+    })
+  },
 
   chooseLesson: function (e) {
     var arr = this.data.listData;

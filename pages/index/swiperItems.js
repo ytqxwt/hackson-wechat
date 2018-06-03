@@ -1,4 +1,4 @@
-var swiperItems_student = [{
+var swiperItems = [{
     url: "/pages/camera/camera",
     class: 'sign-img',
     image: '../../images/weather.png',
@@ -35,6 +35,6 @@ var swiperItems_student = [{
 },
 ]
 module.exports = {
-    swiperItems_student: swiperItems_student,
+    swiperItems: swiperItems,
 
 }

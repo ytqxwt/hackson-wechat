@@ -2,7 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/editCozyTemp/editCozyTemp",
+<<<<<<< HEAD
     "pages/weather/weather",
+=======
+    "pages/todolist/todolist",
+    "pages/newsTemp/newsTemp",
+>>>>>>> 97276c689cb66859ec637deb61fe50f883ba8121
     "pages/showTemp/showTemp",
     "pages/newsTemp/newsTemp"
   ],
