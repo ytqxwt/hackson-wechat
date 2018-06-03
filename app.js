@@ -2,10 +2,7 @@ const APP_ID = 'wxb32df375196aa830';//输入小程序appid
 const APP_SECRET = 'a4c5e15e2f612d3cf1ed126acdff6001';//输入小程序app_secret  
 var OPEN_ID = ''//储存获取到openid  
 var SESSION_KEY = ''//储存获取到session_key 
-<<<<<<< HEAD
 // const io = require('../../utils/weapp.socket.io.js');
-=======
->>>>>>> b753759d2d93fa9632e5fd1a54330ff14c7acd3b
 App({
   onLaunch: function () {
     getOpenIdTap(this)
