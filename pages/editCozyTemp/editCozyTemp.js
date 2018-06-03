@@ -39,7 +39,7 @@ Page({
   submitMessage() {
 
   },
-  //多节课程view的选中事件
+
   choseOrNot(e) {
     console.log(e);
     var bgColor = this.data.pageBackgroundColor == '#E6F3F9' ? '#77c9d4' : '#E6F3F9';

@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/weather/weather",
     "pages/editCozyTemp/editCozyTemp",
     "pages/newsTemp/newsTemp",
     "pages/showTemp/showTemp",
-    "pages/weather/weather",
     "pages/index/index",
     "pages/festival/festival"
   ],
