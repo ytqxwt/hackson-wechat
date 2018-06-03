@@ -1,5 +1,6 @@
 <view class="container">
   <view class="specific_template">
+    <view class="add" bindtap="submitMessage">submit</view>
     <view class="add" bindtap="submitMessage">
       <image data-statu="open" src="../../images/ok.png" style="width:22px;height:22px;float:right;margin-right:30rpx;margin-top:22rpx;" />
     </view>
