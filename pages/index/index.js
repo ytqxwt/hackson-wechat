@@ -5,7 +5,6 @@ const io = require('../../utils/weapp.socket.io.js');
 Page({
   data: {
     swiperItems: [],
-    sImg: null,
     showDot: 0,
   },
   onLoad: function () {
@@ -28,44 +27,11 @@ Page({
   },
   onShow(e) {
     var that = this;
-    // synchronizeDataFromGlobalData(that);
     this.setData({
       swiperItems: swiperItems,
     })
 
-    //   wx.login({
-    //     success: function(res) {
-    //       if (res.code) {
-    //         //发起网络请求
-    //         wx.request({
-    //           url: 'https://test.com/onLogin',
-    //           data: {
-    //             code: res.code
-    //           }
-    //         })
-    //       } else {
-    //         console.log('登录失败！' + res.errMsg)
-    //       }
-    //     }
-    //   });
-    // }
 
-
-    wx.login({
-      success: function (res) {
-        wx.getUserInfo({
-          success: function (res) {
-            var simpleUser = res.userInfo;
-            sImg = simpleUser.avatarUrl
-            app.globalData.sName = simpleUser.nickName
-            that.setData({
-              nickName: simpleUser.nickName,
-              sImg: simpleUser.avatarUrl,
-            })
-          }
-        });
-      }
-    });
   },
 
   swiperChange(e) {
@@ -76,13 +42,5 @@ Page({
   },
 })
 
-/*
-* 同步全局变量到页面
-*/
-function synchronizeDataFromGlobalData(that) {
-  that.setData({
-    sImg: app.globalData.sImg,
-  })
-}
 
 

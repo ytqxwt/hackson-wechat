@@ -1,0 +1,69 @@
+<view class="container">
+
+  <view class="selection1">
+    <view class="s1-left">
+      <view>
+        <text>第11周\n</text>
+        <text>星期三</text> 
+      </view>
+    </view>
+    <view class="s1-mid">
+      <view class="mid-img"></view>
+      <text>UNDEFINED</text>
+    </view>
+    <view class="s1-right">
+      <view>
+        <radio-group>
+          <navigator hover-class='none' url='../teacherIndex/teacherIndex'>
+            <label class="raido1" wx:for='{{items1}}'>
+              <radio value='{{item.name}}'/>{{item.value}}
+            </label>
+          </navigator>
+          <navigator hover-class='none' url='../index/index'>
+            <label class="raido2" wx:for='{{items2}}'>
+              <radio value='{{item.name}}' checked='true'/>{{item.value}}
+            </label>
+          </navigator>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+
+  <view class="selection2">
+    <navigator class="selection2-content" url='../index/index'>
+      <image src='../../images/back.png' style='width:21px;height:21px;'/>
+      <text>返回</text>
+    </navigator>
+  </view>
+
+  <view class="selection3">
+    <navigator class="selection3-content1">
+      <image src='../../images/new.png' style='width:21px;height:21px;'/>
+      <text>更新课程表</text>
+    </navigator>
+    <navigator class="selection3-content2">
+      <image src='../../images/set.png' style='width:21px;height:21px;'/>
+      <text>权限设置</text>
+    </navigator>
+    <navigator class="selection3-content3">
+      <image src='../../images/clean.png' style='width:21px;height:21px;'/>
+      <text>清理缓存</text>
+    </navigator>
+  </view>
+
+  <view class="selection4">
+    <navigator class="selection4-content1">
+      <image src='../../images/message3.png' style='width:21px;height:21px;'/>
+      <text>问题反馈</text>
+    </navigator>
+    <navigator class="selection4-content2">
+      <image src='../../images/callus.png' style='width:21px;height:21px;'/>
+      <text>联系我们</text>
+    </navigator>
+    <navigator class="selection4-content3">
+      <image src='../../images/version.png' style='width:21px;height:21px;'/>
+      <text>版本号：2.8.3</text>
+    </navigator>
+  </view>
+
+</view>
