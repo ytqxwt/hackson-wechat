@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/todolist/todolist",
-    "pages/index/index",
-    "pages/newsTemp/newsTemp",
     "pages/editCozyTemp/editCozyTemp",
+    "pages/index/index",
+    "pages/todolist/todolist",
+    
+    "pages/newsTemp/newsTemp",
+    
     "pages/showTemp/showTemp",
     "pages/weather/weather"
   ],
