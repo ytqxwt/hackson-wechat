@@ -7,10 +7,7 @@ page{
   position: relative;
 }
 .text{
-   position: absolute;
-   top: 350rpx;
-   left: 270rpx; 
-   line-height: 30px;
+  position: relative;
 }
 
 .td {

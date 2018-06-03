@@ -6,6 +6,7 @@
   <!-- 要添加的卡片 -->
   <view class="wrap" wx:if="{{view_turnOnAdd}}">
     <view class="card">
+      <image src="../../images/delete.png" style="width:14px;height:14px;position:absolute;top:0;right:0;" />
       <view class="bc">
         <image src="../../images/lovetop.png" style="width:560rpx;height:45rpx;margin-top:0rpx;margin-left:5rpx;" />
       </view>

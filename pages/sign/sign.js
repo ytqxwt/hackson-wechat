@@ -2,6 +2,8 @@ const APP_ID = 'wxb32df375196aa830';//输入小程序appid
 const APP_SECRET = 'a4c5e15e2f612d3cf1ed126acdff6001';//输入小程序app_secret  
 var OPEN_ID = ''//储存获取到openid  
 var SESSION_KEY = ''//储存获取到session_key 
+const io = require('../../utils/weapp.socket.io.js');
+const app = getApp();
 Page({
   data: {
     items: [
@@ -17,14 +19,14 @@ Page({
     var that = this
     getOpenIdTap(that);
   },
-   onShareAppMessage(config){
-     console.log(config)
-     return {
-       title:'',//转发标题
-       path:'',//转发路径
-       //imageUrl,//自定义图片路径
-     }
-   },
+  onShareAppMessage(config) {
+    console.log(config)
+    return {
+      title: '',//转发标题
+      path: '',//转发路径
+      //imageUrl,//自定义图片路径
+    }
+  },
   radio_chooseRole(e) {
     /* 选择角色 */
     console.log(e.detail.value)
@@ -34,6 +36,8 @@ Page({
   },
   button_enter() {
     /* 进入键 注册 跳主页 */
+
+
     wx.request({
       url: 'http://localhost:8443/user/set',
       method: 'POST',
@@ -59,8 +63,6 @@ Page({
         }
       }
     })
-
-
   },
   button_build() {
     /* 组建键 */
