@@ -1,6 +1,7 @@
 // pages/weather/weather.js
 var app = getApp();
 var weather = require("../../utils/weather.js");
+var userData = [{}, {}];
 Page({
   data: {
     relationArray: ['老爸', '老妈', '弟弟', '姐姐'],
@@ -10,16 +11,45 @@ Page({
     region: ['广东省', '广州市', '海珠区'],
     customItem: '',
     view_turnOnAdd: false,
-    relation: null,
-    userData: null,
+    relation: '老爸',
+    userData: [],
   },
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this
     //获取未添加城市的的关系
     //getNoCityRelation(that);
+    var _list = new Array();
+    wx.request({
+      url: 'http://localhost:8443/weather/getFamilyCity',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        id: app.globalData.familyId,
+      },
+      success: (res) => {
+        console.log(res)
+        that.setData({
+          userData: res.data,
+        })
+        for (let i = 0; i < res.data.length; i++) {
+          console.log(i);
+          weather.getWeatherData(res.data[i].city, function (d) {
+            that.data.userData[i].weather = d.desc
+          });
+        }
+        that.setData({
+          userData: that.data.userData,
+        })
 
+      },
+      fail: (e) => {
+        console.log(e);
+      }
+    });
     //获得已添加城市的天气
-    getCityWeather(that);
+    // getCityWeather(that);
   },
   addNew() {
     this.setData({
@@ -73,39 +103,7 @@ Page({
 })
 
 function getCityWeather(that) {
-  wx.request({
-    url: 'http://localhost:8443/user/getFamilyCity',
-    method: 'POST',
-    header: {
-      'content-type': 'application/x-www-form-urlencoded'
-    },
-    data: {
-      id: app.globalData.familyId,
-    },
-    success: (res) => {
-      console.log(res.data);
-      var _list = new Array();
-      for (var i = 0; i < res.data.length; i++) {
-        console.log(res.data[0].city);
-        weather.getWeatherData(res.data[i].city, function (d) {
-          console.log(d);
-          if (d.status = 'ok') {
-            _list.push(d.desc);
-          }
-          else {
-            console.log(d);
-          }
-        });
-      }
-      that.setData({
-        weatherInfo: _list,
-        userData: res.data
-      });
-    },
-    fail: (e) => {
-      console.log(e);
-    }
-  });
+
 }
 
 function getNoCityRelation(that) {

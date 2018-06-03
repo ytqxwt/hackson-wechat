@@ -44,8 +44,9 @@
           <text class="text2">所在城市：</text>
           <text>{{item.city}}</text>
           <!-- <input class="input2" /> -->
+          <text >{{item.weather}}</text>
         </view>
-        <text wx:if="{{weatherInfo}}">{{weatherInfo[index]}}</text>
+        
       </view>
       <button class="btn" form-type="submit" bindtap="change">保存</button>
     </view>
