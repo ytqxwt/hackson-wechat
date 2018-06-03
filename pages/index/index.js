@@ -1,4 +1,4 @@
-import { swiperItems } from "./swiperItems";
+import { swiperItems_student } from "./swiperItems";
 //获取应用实例
 var app = getApp();
 Page({
@@ -15,7 +15,7 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      swiperItems: swiperItems
+      swiperItems: swiperItems_student
     })
   },
   onShow(e) {
