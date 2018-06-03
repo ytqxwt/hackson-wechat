@@ -20,7 +20,7 @@
           </view>
         </view>
       </view>
-      <view class="btn_ok" bindtap="submitMessage" data-statu="close">发送</view>
+      <view class="btn_ok" bindtap="submitMessage " data-statu="close">发送</view>
     </view>
     <view class="text" wx:for="{{texts}}" wx:key="*this">
       <view wx:if="{{item.number==number}}">
