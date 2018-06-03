@@ -28,4 +28,17 @@
       <view class="dot3" style="{{showDot!=2?'':'background: #000000'}}"></view>
     </view>
   </view>
+  <view class="selection4">
+    <view class="selection4-content">
+      <view class="tittle">异地天气</view>
+      <view wx:for="{{lists}}" wx:if="{{showAll ||(!showAll && !item.done)}}" wx:key="*this" id="{{item.id}}" class="todolist" style="width:480rpx;margin:0 auto;font-size:13px;color:#666666">
+        <view style="margin:0rpx auto;width:480rpx;border-bottom:1px solid #d6d6d6;border-radius:3px;padding:10rpx;">
+          <text>{{index+1}}:</text>
+          <text data-id="{{index}}" class="cnt">{{item.content}}</text>
+          <text class="time">{{item.beginTime}}-{{item.finishTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
+
