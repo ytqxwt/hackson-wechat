@@ -1,4 +1,4 @@
-import { swiperItems } from "./swiperItems";
+import { swiperItems_student } from "./swiperItems";
 //获取应用实例
 var app = getApp();
 const io = require('../../utils/weapp.socket.io.js');

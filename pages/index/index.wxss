@@ -139,7 +139,7 @@ radio {
 }
 
 .memorandum-img {
-    background: #fe8081;
+    background: #ffc5bb;
 }
 
 .setting-img {
@@ -196,7 +196,6 @@ radio {
 
 .selection4-content {
     width: 690rpx;
-    height: 550rpx;
     background: white;
     margin: 0 auto;
     box-shadow: 10rpx 10rpx 50rpx 2rpx #bbbaba;
@@ -213,49 +212,40 @@ radio {
     text-align: center;
     border-bottom: 1px solid #ff6732;
 }
-
-.selection4-content .edit {
-    width: 500rpx;
-    margin: 20rpx auto;
-}
-
 .table {
-    border: 0px solid darkgray;
+  margin-top: 10rpx;
+   border: 0px solid darkgray; 
 }
-
 .tr {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    height: 80rpx;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 80rpx;
+  align-items: center;
 }
-
 .td {
-    width: 40%;
+    width:40%;
     justify-content: center;
     text-align: center;
     color: #666666;
 }
-
-.bg-w {
-    background: snow;
+.bg-g{
+  background: #ffab32;
 }
-
-.bg-g {
-    background: #E6F3F9;
-}
-
 .th {
-    width: 40%;
-    justify-content: center;
-    background: #77c9d4;
-    color: #fffffc;
-    display: flex;
-    height: 80rpx;
-    align-items: center;
+  width: 40%;
+  justify-content: center;
+   background: #ffab32; 
+  color: #fffffc;
+  display: flex;
+  height: 70rpx;
+  align-items: center;
+  font-size: 12px;
 }
-
+.date,.text{
+  display: inline-block;
+  margin-left: 20rpx;
+}
 .selection5 {
     height: 400rpx;
     width: 600rpx;

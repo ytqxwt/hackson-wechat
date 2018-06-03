@@ -5,23 +5,24 @@
   <!-- 要添加的卡片 -->
   <view class="wrap" wx:if="{{view_turnOnAdd}}">
     <view class="card">
+      <image src='../../images/delete.png' style='width:14px;height:14px;position:absolute;top:0;right:0;'/>
       <view class="bc">
         <image src="../../images/lovetop.png" style="width:560rpx;height:45rpx;margin-top:0rpx;margin-left:5rpx;" />
       </view>
       <view class="fill">
         <view class="fill1">
+         <picker bindchange="bindPickerChange" value="{{relation}}" range="{{relationArray}}">
           <text class="text1">我的：{{relation}}</text>
-          <picker bindchange="bindPickerChange" value="{{relation}}" range="{{relationArray}}">
-            <view class="input1">记得改呀{{relationArray[index]}}</view>
+             <!-- <view class="input1">爸爸{{relationArray[index]}}</view>  -->
           </picker>
-          <input class="input1" />
+          <!-- <input class="input1" /> -->
         </view>
         <view class="fill2">
           <text class="text2">所在城市：</text>
           <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-            <view class="picker">当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+            <view class="picker" style='margin-top:12rpx;'>{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
           </picker>
-          <input class="input2" />
+          <!-- <input class="input2" /> -->
         </view>
       </view>
       <button class="btn" bindtap="button_saveAdd">保存</button>
