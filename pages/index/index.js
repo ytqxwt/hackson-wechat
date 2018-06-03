@@ -14,7 +14,7 @@ Page({
 
     //建立长连接
     app.globalData.socket = (this.socket = io(
-      `ws://localhost:9000?openId=${app.globalData.openId}&familyId=${app.globalData.familyId}`,
+      `ws://geek-team.xin/wss?openId=${app.globalData.openId}&familyId=${app.globalData.familyId}`,
     ))
     console.log(this.socket)
     this.socket.on('connect', function () {

@@ -54,10 +54,10 @@ function getWeatherData(cityName, callback) {
                     city: hw.basic.city, //城市
                     upTime: hw.basic.update.loc.slice(-5), //更新时间
                     now: formatTime(), // 当前日期
-                    temp: 　hw.now.tmp, // 当前温度
+                    temp: hw.now.tmp, // 当前温度
                     desc: hw.now.cond.txt, //描述
                     status: "ok", //状态
-                    suggestion:hw.suggestion //气象指数
+                    suggestion: hw.suggestion //气象指数
                 };
             }
 
@@ -70,14 +70,14 @@ function getWeatherData(cityName, callback) {
 }
 
 /*创建一个数组，表示星期 */
-var dayArr = ["周日","周一","周二","周三","周四","周五","周六"];
+var dayArr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 
 /* 格式化时间 
     传递一个时间对象，返回月日星期
 */
-function formatTime(dt){
+function formatTime(dt) {
     //判断对象是否存在
-    if(!dt){
+    if (!dt) {
         //若没传对象
         //创建一个当前日期对象
         dt = new Date();
@@ -87,13 +87,13 @@ function formatTime(dt){
     //期望格式 2月12日 周日
 
     //获取月份
-    var m = dt.getMonth()+1;
+    var m = dt.getMonth() + 1;
     //获取日
     var date = dt.getDate();
     //获取星期
     var day = dayArr[dt.getDay()];
 
-    return m + "月" + date +"日 "+day;
+    return m + "月" + date + "日 " + day;
 
 }
 

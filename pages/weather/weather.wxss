@@ -67,7 +67,7 @@ page {
 
 .card .btn,
 .card .btn2 {
-    width: 120rpx;
+    width: 140rpx;
     height: 50rpx;
     font-size: 10px;
     line-height: 50rpx;

@@ -241,8 +241,10 @@ radio {
     border-bottom: 1px solid #ff6732;
 }
 .table {
-  margin-top: 10rpx;
-   border: 0px solid darkgray; 
+  margin-top: 20rpx;
+  border: 0px solid darkgray;
+  font-size: 12px;
+  
 }
 .tr {
   display: flex;
@@ -250,15 +252,22 @@ radio {
   justify-content: center;
   height: 80rpx;
   align-items: center;
+  
 }
 .td {
-    width:40%;
+    width:50%;
     justify-content: center;
     text-align: center;
     color: #666666;
+    
+}
+.bg-w{
+  background: snow;
 }
 .bg-g{
-  background: #ffab32;
+  background: #fbdfb6;
+  width: 554rpx;
+  margin: 0 auto;
 }
 .th {
   width: 40%;
@@ -266,13 +275,8 @@ radio {
    background: #ffab32; 
   color: #fffffc;
   display: flex;
-  height: 70rpx;
+  height: 80rpx;
   align-items: center;
-  font-size: 12px;
-}
-.date,.text{
-  display: inline-block;
-  margin-left: 20rpx;
 }
 .selection5 {
     height: 400rpx;

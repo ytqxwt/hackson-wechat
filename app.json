@@ -4,6 +4,7 @@
     "pages/editCozyTemp/editCozyTemp",
     "pages/weather/weather",
     "pages/showTemp/showTemp",
+    "pages/setIndex/setIndex",
     "pages/newsTemp/newsTemp"
   ],
   "window": {

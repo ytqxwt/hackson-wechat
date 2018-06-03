@@ -3,9 +3,6 @@
         <!-- 外部容器，可以纵向滚动 -->
         <!-- 基本信息的view，包含城市、时间、更新日期等 -->
         <view class="base_info inner" style="width:100rpx;">
-            <!-- <text class="city">{{city}}</text>
-                <text class="date">{{now}}</text>
-                <text class="update">{{upTime}} 更新</text> -->
             <text class="desc">{{desc}}</text>
         </view>
     </block>

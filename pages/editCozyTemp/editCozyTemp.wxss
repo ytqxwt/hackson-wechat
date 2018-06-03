@@ -7,7 +7,10 @@ page{
   position: relative;
 }
 .text{
+  margin-top: 100rpx;
+  color: #464646;
   position: relative;
+
 }
 
 .td {
@@ -104,6 +107,7 @@ page{
   overflow-y: scroll; /*超出父盒子高度可滚动*/  
 }  
 .text input{
+
   width: 100rpx;
   border-bottom: 1px solid #464646;
   margin-bottom: 10px;

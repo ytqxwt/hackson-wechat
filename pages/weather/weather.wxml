@@ -50,7 +50,7 @@
           <!-- <text>{{...d}}</text> -->
         </view>
       </view>
-      <button class="btn" form-type="submit" bindtap="change">保存</button>
+      <button class="btn" form-type="submit" bindtap="change">小叮嘱</button>
     </view>
     <image src="../../images/littleLove.png" style="position:absolute;width:300rpx;height:300rpx;right:0rpx;top:0rpx;" />
   </view>

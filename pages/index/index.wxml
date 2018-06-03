@@ -31,12 +31,20 @@
       <view class="table">
         <view class="tr bg-w">
           <view class="th">时间</view>
-          <view class="th">节日</view>
+          <view class="th">课程</view>
         </view>
-        <block wx:for="{{sTodayCourse}}" wx:key="*this" wx:if="{{sTodayCourse}}">
+        <block>
           <view class="tr bg-g">
-            <view class="td">{{item.time}}</view>
-            <view class="td">{{item.cName}}</view>
+            <view class="td">2018-6-1</view>
+            <view class="td">儿童节</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td">2018-8-14</view>
+            <view class="td">老妈生日</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td">2018-11-29</view>
+            <view class="td">感恩节</view>
           </view>
         </block>
       </view>
