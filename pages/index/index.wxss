@@ -196,7 +196,6 @@ radio {
 
 .selection4-content {
     width: 690rpx;
-    height: 550rpx;
     background: white;
     margin: 0 auto;
     box-shadow: 10rpx 10rpx 50rpx 2rpx #bbbaba;
