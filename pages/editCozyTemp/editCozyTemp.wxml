@@ -1,34 +1,39 @@
-
-<!-- <view>
-    <image src="/images/record.png" bindtouchstart="startRecode" bindtouchend="endRecode">
-        按住录音
-    </image> -->
-    <!-- <button type="primary" bindtouchstart="startRecode" bindtouchend="endRecode" class="cxbtn">
-        按住录音（可选）
-    </button> -->
-    <!-- <image src="/images/picture.png" bindtap="chooseImage">插入图片</image>
-    <image src="{{tempFilePaths }}" mode="aspecFill" style="width:20rpx; height: 20rpx" />
-</view> -->
-
 <view class="container">
-
   <view class="specific_template">
-    <view class="text">
-      <input />
-      <view>今天将会下雨</view>
-      <view>出行记得带伞</view>
+    <view class="add">
+      <image bindtap="powerDrawer" data-statu="open" src="../../images/ok.png" style="width:22px;height:22px;float:right;margin-right:30rpx;margin-top:22rpx;" />
     </view>
-    <image src='../../images/15-2.png' style='width:700rpx;height:700rpx;margin-left:30rpx;margin-top:130rpx;'/> 
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+    <!-- content -->
+    <!-- 使用animation属性指定需要执行的动画 -->
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+      <!-- drawer content -->
+      <view class="drawer_title">请选择亲人</view>
+      <view class="drawer_content">
+        <view class="table">
+          <view class="s">
+            <view wx:for="{{listData}}" wx:key="*this">
+              <view class="td" style="width:100rpx; height:22rpx; border-bottom:1px solid:#000000" bindtap="choseOrNot" id="" data-re="{{item.relation}}" style="background-color:{{pageBackgroundColor}}">
+                {{item}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="btn_ok" bindtap="submitMessage" data-statu="close">发送</view>
+    </view>
+    <view class="text" wx:for="{{texts}}" wx:key="*this">
+      <view wx:if="{{item.number==number}}">
+        <input />
+        <view>{{item.text1}}</view>
+        <view>{{item.text2}}</view>
+      </view>
+    </view>
+    <image src="../../images/{{number}}.png" style="width:700rpx;height:700rpx;margin-left:30rpx;margin-top:130rpx;" />
   </view>
-
   <view class="chosen">
-
-    <image src="/images/record.png" bindtouchstart="startRecode" bindtouchend="endRecode" style='width:30px;height:30px;' />
-
-    <image src="/images/picture.png" bindtouchstart="startRecode" bindtouchend="endRecode" style='width:30px;height:30px;' />
-
-    <image src="/images/music2.png" bindtouchstart="startRecode" bindtouchend="endRecode" style='width:30px;height:30px;' />
-
+    <image src="/images/record.png" bindtouchstart="startRecode" bindtouchend="endRecode" style="width:30px;height:30px;" />
+    <image src="/images/picture.png" bindtouchstart="startRecode" bindtouchend="endRecode" style="width:30px;height:30px;" />
+    <image src="/images/music2.png" bindtouchstart="startRecode" bindtouchend="endRecode" style="width:30px;height:30px;" />
   </view>
-
 </view>

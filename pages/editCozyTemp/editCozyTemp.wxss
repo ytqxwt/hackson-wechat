@@ -12,6 +12,86 @@ page{
    left: 270rpx; 
    line-height: 30px;
 }
+
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+    color: #666666;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+   background: #77c9d4; 
+  color: #fffffc;
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 80rpx;
+  align-items: center;
+}
+.btn_ok{  
+  padding: 10px;  
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;   
+  font-size: 14px;
+  line-height: 50rpx;
+  /* width: 30rpx; */
+  background: #ff7263;
+  color: #ffffff;
+  margin-top: 10rpx;
+  
+}  
+.bg-g{
+   background: #E6F3F9; 
+}
+.top{  
+    padding-top:8px;  
+} 
+/*content*/  
+.drawer_box {  
+  width: 650rpx;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 50%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 3px;  
+}  
+.table {
+  border: 0px solid darkgray;
+  
+}  
+.s{
+  width: 300rpx;
+  height: 400rpx;
+  text-align: center;
+  margin: 0 auto;
+}
+.s .td{
+  margin: 0 auto;
+}
+.drawer_title{  
+   padding:10px;   
+  font: 14px "microsoft yahei";  
+  text-align: center;  
+  color: #4d4d4d;
+}  
+.drawer_content {  
+  height: 210px;  
+  overflow-y: scroll; /*超出父盒子高度可滚动*/  
+  align-content: center
+}  
+  
+.grid { display: -webkit-box; display: box; }
+ 
 .text input{
   width: 100rpx;
   border-bottom: 1px solid #464646;
