@@ -1,17 +1,12 @@
 <view class="container">
-
   <view class="selection1">
-    <view class="s1-left"></view>
-    <navigator url="/pages/sign/sign">
-      <view class="s1-mid" bindtap="register">
-        <view>
-          <image wx:if="{{sImg}}" src="{{sImg}}" class="mid-img"></image>
-        </view>
-        <text>{{sName}}</text>
+    <view class="userinfo" style="margin:-60rpx auto;">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
       </view>
-    </navigator>
+      <open-data type="userNickName"></open-data>
+    </view>
   </view>
-
   <view class="selection2" style="position:relative;">
     <swiper current="{{showDot}}" bindchange="swiperChange" class="swiper-box" duration="300" display-multiple-items="4" style="height:{{winHeight-31}}px;width:800rpx;">
       <swiper-item class="swiperItems" wx:key="*this" wx:for="{{swiperItems}}">
@@ -33,8 +28,7 @@
   <view class="selection4">
     <view class="selection4-content">
       <view class="tittle">节日提醒</view>
-        
-        <view class="table">
+      <view class="table">
         <view class="tr bg-w">
           <view class="th">时间</view>
           <view class="th">节日</view>
@@ -46,8 +40,6 @@
           </view>
         </block>
       </view>
-
     </view>
   </view>
 </view>
-

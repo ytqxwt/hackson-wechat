@@ -38,7 +38,6 @@ Page({
     console.log('tap')
   },
 
-<<<<<<< HEAD
   submitMessage(e) {
     var currentStatu = e.currentTarget.dataset.statu;
     this.util(currentStatu)
@@ -46,8 +45,6 @@ Page({
       console.log(d)
     })
   },
-=======
->>>>>>> 97276c689cb66859ec637deb61fe50f883ba8121
 
   /**
    * 生命周期函数--监听页面加载
